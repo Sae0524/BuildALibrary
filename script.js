@@ -76,6 +76,28 @@ class CD extends Media {
   }
 }
 
+class Catalog {
+  constructor(mediaList, name){
+  this._MyCatalog = [mediaList];
+  this._Name = name
+ }
+get consoleName() {
+   return this._Name;
+}
+get name() { // we use the get method when we need to return the value from the propety
+  return this._Name;
+}
+set mediaList(newMedialist)  { // we use the set method when we need to update the propety value
+  for(let newBand of newMedialist){
+      this._MyCatalog.push(newBand);
+  }
+ }
+}
+
+let CatalogRaphael = new Catalog("marron5","Vancouver"); // create the object from the class
+CatalogRaphael.mediaList = ["queen","lady Gaga", "shotSambado"] // set new bands to the catalog
+console.log(CatalogRaphael.consoleName)
+
 
 const historyOfEveryhing = Book('Bill Bryson','A short Histoy of Nearly Everything', 544);
 historyOfEveryhing.toggleCheckOutStatus();
